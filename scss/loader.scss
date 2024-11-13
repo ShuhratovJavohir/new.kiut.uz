@@ -1,0 +1,63 @@
+$index: calc(1vh + 1vw);
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #0096DB; /* The blue background color from the image */
+  font-family: Arial, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999999;
+
+  &-logo {
+    width: calc($index * 27);
+  }
+}
+
+.loader-box {
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 50px;
+}
+
+.dots {
+  display: inline-block;
+}
+
+.dot {
+  width: calc($index * 0.5);
+  height: calc($index * 0.5);
+  background-color: #fff; /* assuming white dots */
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  animation: jump 1.2s infinite ease-in-out;
+}
+
+/* Define keyframes for the jumping animation */
+@keyframes jump {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: -1s;
+}

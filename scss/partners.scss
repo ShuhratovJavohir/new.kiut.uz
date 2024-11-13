@@ -1,0 +1,12 @@
+.partners {
+  &-list{
+    &__item {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 306px;
+      height: 150px;
+    }
+  }
+}

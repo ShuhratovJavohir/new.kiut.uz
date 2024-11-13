@@ -1,0 +1,1462 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>KIUT</title>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./scss/styles.css">
+    <link rel="shortcut icon" href="./images/icons/icon.svg" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+            defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            --header-top-h: 1px;
+            --nav-h: 1px;
+        }
+
+        .header-content {
+            height: calc(100vh - var(--header-top-h) - var(--nav-h));
+        }
+    </style>
+</head>
+<body class="body">
+
+<div class="loader">
+    <div class="loader-box">
+        <div class="logo">
+            <img class="loader-logo" loading="lazy" src="kiut_logo.svg" alt="logo">
+        </div>
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="nav-block">
+    <!-- top -->
+    <div class="header-top">
+        <div class="header-top-line"></div>
+        <!-- /.header-top-line -->
+        <div class="container">
+            <div class="header-top-inner">
+                <!-- header-top list -->
+                <ul class="header-top__list">
+                    <li class="header-top__list-item">
+                        <a href="#" class="header-top__list-link header-top__list-link-hover"> Vacancies </a>
+                    </li>
+                    <li class="header-top__list-item">
+                        <a href="#" class="header-top__list-link header-top__list-link-hover"> Teacher's KPI </a>
+                    </li>
+                    <li class="header-top__list-item">
+                        <a href="#" class="header-top__list-link header-top__list-link-hover"> Contacts </a>
+                    </li>
+                    <li class="header-top__list-item" id="header-top-drop">
+                        <div class="header-top__list-link">
+                            <span class="header-top__list-link-hover">Quick Links</span>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 7L8.75 10.75L12.5 7" stroke="" stroke-width="1.5" stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <ul class="header-top__list-item_drop">
+                            <li>
+                                <a href="#">Расписания</a>
+                            </li>
+                            <li>
+                                <a href="#">Интранет</a>
+                            </li>
+                            <li>
+                                <a href="#">Интранет (заочное обучение)</a>
+                            </li>
+                            <li>
+                                <a href="#">Библиотека</a>
+                            </li>
+                            <li>
+                                <a href="#">Электронная почта</a>
+                            </li>
+                            <li>
+                                <a href="#">Оценки студентов</a>
+                            </li>
+                            <li>
+                                <a href="#">Восстановления ид кард</a>
+                            </li>
+                            <li>
+                                <a href="#">Посещаемость</a>
+                            </li>
+                            <li>
+                                <a href="#">Конференции</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!--//header-top list-->
+
+                <!-- header-top right -->
+                <div class="header-top__right">
+                    <!-- header-top search -->
+                    <form class="header-top__form">
+                        <label class="header-top__form-lable">
+                            <input
+                                    class="header-top__form-input"
+                                    type="text"
+                                    placeholder="Search..."
+                            />
+                            <img
+                                    class="header-top__form-img"
+                                    src="./images/icons/search.svg"
+                                    alt="search-icon"
+                                    id="search"
+                            />
+                        </label>
+                    </form>
+                    <!--//header-top search-->
+
+                    <!-- header-top social -->
+                    <ul class="header-top__social">
+                        <li class="header-top__social-item">
+                            <a class="header-top__social-link" href="#">
+                                <img
+                                        class="header-top__social-img"
+                                        src="./images/icons/facebook.svg"
+                                        alt="facebook icon"
+                                />
+                            </a>
+                        </li>
+                        <li class="header-top__social-item">
+                            <a class="header-top__social-link" href="#">
+                                <img
+                                        class="header-top__social-img"
+                                        src="./images/icons/telegram.svg"
+                                        alt="telegram icon"
+                                />
+                            </a>
+                        </li>
+                        <li class="header-top__social-item">
+                            <a class="header-top__social-link" href="#">
+                                <img
+                                        class="header-top__social-img"
+                                        src="./images/icons/linkedin.svg"
+                                        alt="linkedin icon"
+                                />
+                            </a>
+                        </li>
+                        <li class="header-top__social-item">
+                            <a class="header-top__social-link" href="#">
+                                <img
+                                        class="header-top__social-img"
+                                        src="./images/icons/youtube.svg"
+                                        alt="youtube icon"
+                                />
+                            </a>
+                        </li>
+                        <li class="header-top__social-item">
+                            <a class="header-top__social-link" href="#">
+                                <img
+                                        class="header-top__social-img"
+                                        src="./images/icons/instagram.svg"
+                                        alt="instagram icon"
+                                />
+                            </a>
+                        </li>
+                    </ul>
+                    <!--//header-top__social-->
+                </div>
+                <!--//header-top right-->
+            </div>
+        </div>
+    </div>
+    <!--  nav  -->
+    <div class="nav">
+        <nav class="header-nav">
+            <div class="header-nav-line"></div>
+            <!-- /.header-nav-line -->
+            <div class="container">
+                <div class="header-nav__inner">
+                    <!-- header-nav logo -->
+                    <a href="./index.html" class="header-nav__logo">
+                        <img loading="lazy" src="./images/logo.svg" alt=""/>
+                    </a>
+                    <!--//header-nav logo-->
+
+                    <div class="header-nav__right">
+                        <!-- header-nav list -->
+                        <ul class="header-nav__list" id="header-nav__list">
+                            <li class="header-nav__list-item container">
+                                <div class="header-nav__list-link">
+                                    <span class="header-nav__list-link-span">University</span>
+                                    <img loading="lazy" src="./images/icons/black-arrow.svg" alt="arrow icon"/>
+                                </div>
+                                <div class="header-nav-drop" id="university">
+                                    <div class="container">
+                                        <div class="header-nav-drop-title">
+                                            <h3>University</h3>
+                                            <img loading="lazy" src="./images/icons/title-underline.svg" alt="">
+                                        </div>
+                                        <div class="header-nav-drop-lists">
+                                            <ul class="header-nav-drop-list">
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">About Us</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Rector's Speech</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Our Mission</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Our Team</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="header-nav-drop-list">
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Governance</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Internal Regulations</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Decree of the cabinet of ministers</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Sustainable Development Goals</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="header-nav-drop-list">
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Appeal to the Rector</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Students'union</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Academic Departments</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Departments</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- /.container -->
+                                </div>
+                            </li>
+                            <li class="header-nav__list-item container">
+                                <div class="header-nav__list-link">
+                                    <span class="header-nav__list-link-span">Programs</span>
+                                    <img loading="lazy" src="./images/icons/black-arrow.svg" alt="arrow icon"/>
+                                </div>
+                                <div class="header-nav-drop" id="programs">
+                                    <div class="container">
+                                        <div class="header-nav-drop-title">
+                                            <h3>Programs</h3>
+                                            <img loading="lazy" src="./images/icons/title-underline.svg" alt="">
+                                        </div>
+                                        <div class="header-nav-drop-lists">
+                                            <ul class="header-nav-drop-list">
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Bachelor's Programs</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Master's programs</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Evening Education</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Extramural education</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="header-nav-drop-list">
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Transfer</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Scholarship, Financial Aid</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#"> Free online courses</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">School of Engineering</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="header-nav-drop-list">
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">School of Business and Finance</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">School of Education</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">School of Arts</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">School of Medicine</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- /.container -->
+                                </div>
+                            </li>
+                            <li class="header-nav__list-item container">
+                                <div class="header-nav__list-link">
+                                    <span class="header-nav__list-link-span">Admissions</span>
+                                    <img loading="lazy" src="./images/icons/black-arrow.svg" alt="arrow icon"/>
+                                </div>
+                                <div class="header-nav-drop" id="admissions">
+                                    <div class="container">
+                                        <div class="header-nav-drop-title">
+                                            <h3>Admissions</h3>
+                                            <img loading="lazy" src="./images/icons/title-underline.svg" alt="">
+                                        </div>
+                                        <div class="header-nav-drop-lists">
+                                            <ul class="header-nav-drop-list">
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Master's degree</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">International Students</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Study in Korea</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">FAQ</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="header-nav-drop-list">
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Tashkent Admission</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Namangan Admission</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Samarkand Admission</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">MBA AlmaU</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- /.container -->
+                                </div>
+                            </li>
+                            <li class="header-nav__list-item container">
+                                <div class="header-nav__list-link">
+                                    <span class="header-nav__list-link-span">Research</span>
+                                    <img loading="lazy" src="./images/icons/black-arrow.svg" alt="arrow icon"/>
+                                </div>
+                                <div class="header-nav-drop" id="research">
+                                    <div class="container">
+                                        <div class="header-nav-drop-title">
+                                            <h3>Reserch</h3>
+                                            <img loading="lazy" src="./images/icons/title-underline.svg" alt="">
+                                        </div>
+                                        <div class="header-nav-drop-lists">
+                                            <ul class="header-nav-drop-list">
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Scientific Council</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Information Resource Center</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Qualification exam</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Doctorate</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="header-nav-drop-list">
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Innovation Center</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Scientific Journals</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Scientific Department</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- /.container -->
+                                </div>
+                            </li>
+                            <li class="header-nav__list-item container">
+                                <div class="header-nav__list-link">
+                                    <span class="header-nav__list-link-span">Branches</span>
+                                    <img loading="lazy" src="./images/icons/black-arrow.svg" alt="arrow icon"/>
+                                </div>
+                                <div class="header-nav-drop" id="branches">
+                                    <div class="container">
+                                        <div class="header-nav-drop-title">
+                                            <h3>Branches</h3>
+                                            <img loading="lazy" src="./images/icons/title-underline.svg" alt="">
+                                        </div>
+                                        <div class="header-nav-drop-lists">
+                                            <ul class="header-nav-drop-list">
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Namangan</a>
+                                                </li>
+                                                <li class="header-nav-drop-list-item">
+                                                    <a href="#">Samarkand</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- /.container -->
+                                </div>
+                            </li>
+                            <li class="header-nav__list-item container">
+                                <a class="header-nav__list-link header-nav-news" href="#"> News </a>
+                            </li>
+                            <li class="header-nav__list-item container">
+                                <a class="header-nav__list-link" href="#"> Vacancies </a>
+                            </li>
+                            <li class="header-nav__list-item container">
+                                <a class="header-nav__list-link" href="#"> Teacher's KPI </a>
+                            </li>
+                            <li class="header-nav__list-item container">
+                                <a class="header-nav__list-link" href="#"> Contacts </a>
+                            </li>
+                        </ul>
+                        <div class="header-nav__lang">
+                            <button class="header-nav__btn" id="lang">
+                                <span>Ru</span>
+                                <img loading="lazy" src="./images/icons/black-arrow.svg" alt="arrow-icon"/>
+                            </button>
+                            <ul class="header-nav__lang-drop" id="lang-drop">
+                                <li>
+                                    <span>En</span>
+                                </li>
+                                <li>
+                                    <span>Uz</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="header-nav__burger" id="burger">
+                            <span class="header-nav__burger_item"></span>
+                            <span class="header-nav__burger_item"></span>
+                            <span class="header-nav__burger_item"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- /.container -->
+    </div>
+
+</div>
+<!-- /.nav-block -->
+
+
+<header class="header">
+    <!-- header-content -->
+    <div
+            class="header-content"
+            style="
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.6),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(./images/header-bg.jpg);
+        "
+    >
+        <div class="header-content__inner container">
+            <p class="header-content__subtitle">
+                Be smart, be skilled, be professional
+            </p>
+            <h1 class="header-content__title">
+                WELCOME TO <span>KIMYO INTERNATIONAL</span>
+                <span>UNIVERSITY IN TASHKENT</span>
+            </h1>
+            <a class="header-content__link link" href="#">
+                see more
+                <img loading="lazy" src="./images/icons/blue-arrow.svg" alt=""/>
+            </a>
+        </div>
+    </div>
+    <!--//header-content -->
+</header>
+
+<main class="main">
+    <section class="event">
+        <div class="container">
+            <div class="title">
+                <h2 class="title__text">
+                    Events <img loading="lazy" src="./images/icons/title-underline.svg" alt=""/>
+                </h2>
+                <a href="#" class="title__link">
+                    see more
+                    <img loading="lazy" src="./images/icons/blue-arrow.svg" alt=""/>
+                </a>
+            </div>
+            <!-- /.title -->
+
+            <div class="event-list">
+                <div class="event-list__line"></div>
+                <!-- /.event-list__line -->
+                <div
+                        class="event-list__item"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/event/event-1.jpg&quot;);
+              "
+                >
+                    <div class="event-content">
+                        <ul class="event-content__list">
+                            <li class="event-content__item">
+                                <img
+                                        class="event-content__img"
+                                        src="./images/icons/date.svg"
+                                        alt=""
+                                />
+                                <p class="event-content__text">26.12.2023</p>
+                            </li>
+                            <li class="event-content__line"></li>
+                            <li class="event-content__item">
+                                <img
+                                        class="event-content__img"
+                                        src="./images/icons/clock.svg"
+                                        alt=""
+                                />
+                                <p class="event-content__text">9:41</p>
+                            </li>
+                            <li class="event-content__line"></li>
+                            <li class="event-content__item">
+                                <p class="event-content__text">A602</p>
+                            </li>
+                        </ul>
+                        <!-- /.event-content__list -->
+                        <h3 class="event-content__title content-title">
+                            Freelancing - the profession of the future
+                        </h3>
+                        <p class="event-content__subtitle">
+                            The event will be attended by the best freelancers in the
+                            country, who will share their experiences and secrets of
+                            success.
+                        </p>
+                        <div class="event-content-btn">
+                            <a href="#" class="event-content__link">
+                                Read more
+                            </a>
+                            <button class="event-content__link register">
+                                Coming
+                            </button>
+                        </div>
+                        <!-- /.event-btns -->
+                    </div>
+                    <!-- /.event-content -->
+                </div>
+                <!-- /.event-list__item -->
+                <div
+                        class="event-list__item"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/event/event-2.jpg&quot;);
+              "
+                >
+                    <div class="event-content">
+                        <ul class="event-content__list">
+                            <li class="event-content__item">
+                                <img
+                                        class="event-content__img"
+                                        src="./images/icons/date.svg"
+                                        alt=""
+                                />
+                                <p class="event-content__text">20 February</p>
+                            </li>
+                            <li class="event-content__line"></li>
+                            <li class="event-content__item">
+                                <img
+                                        class="event-content__img"
+                                        src="./images/icons/clock.svg"
+                                        alt=""
+                                />
+                                <p class="event-content__text">11:30</p>
+                            </li>
+                            <li class="event-content__line"></li>
+                            <li class="event-content__item">
+                                <p class="event-content__text">A602</p>
+                            </li>
+                        </ul>
+                        <!-- /.event-content__list -->
+                        <h3 class="event-content__title content-title">
+                            Nuclear energy - the energy of the future
+                        </h3>
+                        <p class="event-content__subtitle">
+                            The event will be attended by the best freelancers in the
+                            country, who will share their experiences and secrets of
+                            success.
+                        </p>
+                        <div class="event-content-btn">
+                            <a href="#" class="event-content__link">
+                                Read more
+                            </a>
+                            <button class="event-content__link register">
+                                Coming
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.event-content -->
+                </div>
+                <!-- /.event-list__item -->
+                <div
+                        class="event-list__item"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/event/event-3.jpg&quot;);
+              "
+                >
+                    <div class="event-content">
+                        <ul class="event-content__list">
+                            <li class="event-content__item">
+                                <img
+                                        class="event-content__img"
+                                        src="./images/icons/date.svg"
+                                        alt=""
+                                />
+                                <p class="event-content__text">25 February</p>
+                            </li>
+                            <li class="event-content__line"></li>
+                            <li class="event-content__item">
+                                <img
+                                        class="event-content__img"
+                                        src="./images/icons/clock.svg"
+                                        alt=""
+                                />
+                                <p class="event-content__text">11:41</p>
+                            </li>
+                            <li class="event-content__line"></li>
+                            <li class="event-content__item">
+                                <p class="event-content__text">A602</p>
+                            </li>
+                        </ul>
+                        <!-- /.event-content__list -->
+                        <h3 class="event-content__title content-title">
+                            An IT physician is a physician-engineer
+                        </h3>
+                        <p class="event-content__subtitle">
+                            The event will be attended by the best freelancers in the
+                            country, who will share their experiences and secrets of
+                            success.
+                        </p>
+                        <div class="event-content-btn">
+                            <a href="#" class="event-content__link">
+                                Read more
+                            </a>
+                            <button class="event-content__link register">
+                                Coming
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.event-content -->
+                </div>
+                <!-- /.event-list__item -->
+            </div>
+            <!-- /.event-list -->
+        </div>
+    </section>
+    <!-- /.events -->
+
+    <section class="news">
+        <div class="container">
+            <div class="title">
+                <h2 class="title__text">latest<span>news</span></h2>
+                <a href="#" class="title__link"
+                >see more
+                    <img loading="lazy" src="./images/icons/blue-arrow.svg" alt=""/>
+                </a>
+            </div>
+            <!-- /.title -->
+            <div class="news-grid">
+                <div class="new new-1 new-big">
+                    <img loading="lazy" class="new-img" src="./images/news/news-1.jpg" alt=""/>
+                    <!-- /.img-img -->
+                    <div class="new-content new-content-big">
+                        <div class="news-top">
+                            <p class="new-content__date new-content__date-big">
+                                <img class="news-top__icon" loading="lazy" src="./images/icons/date-news.svg" alt="">
+                                26.12.2023
+                            </p>
+                            <p class="new-content__date new-content__date-big">
+                                <img class="news-top__icon" loading="lazy" src="./images/icons/eye.svg" alt="">
+                                123
+                            </p>
+                        </div>
+                        <!-- /.new-content__date -->
+                        <h3
+                                class="new-content__title content-title new-content__title-big"
+                        >
+                            Successes and Prospects of New Heroes - Stories of Successful
+                            University Graduates
+                        </h3>
+                        <!-- /.new-content__title content-title -->
+                        <p class="new-content__subtitle new-content__subtitle-big">
+                            Meeting the Best! Opening Doors to the Future with University
+                            Alumni: Unique Personal Journeys, Professional Highs and
+                            Heroic Stories of Overcoming". Professional Highs and Heroic
+                            Stories of Overcoming...
+                        </p>
+                        <!-- /.new-content__subtitle-->
+                        <a href="#" class="new-content__link new-content__link-big"
+                        >read more <img loading="lazy" src="./images/icons/blue-arrow.svg" alt=""
+                        /></a>
+                        <!-- /.new-content__link -->
+                    </div>
+                    <!-- /.new-content -->
+                </div>
+                <!-- /.new new-1 -->
+                <div class="new new-2 new-small">
+                    <img loading="lazy" class="new-img" src="./images/news/news-2.jpg" loading="lazy" alt=""/>
+                    <!-- /.img-img -->
+                    <div class="new-content new-content-small">
+                        <div class="news-top">
+                            <p class="new-content__date new-content__date-small">
+                                <img class="news-top__icon" loading="lazy" src="./images/icons/date-news.svg" alt="">
+                                26.12.2023
+                            </p>
+                            <p class="new-content__date new-content__date-small">
+                                <img class="news-top__icon" loading="lazy" src="./images/icons/eye.svg" alt="">
+                                123
+                            </p>
+                        </div>
+                        <!-- /.new-content__date -->
+                        <h3 class="new-content__title new-content__title-small">
+                            Successes and Prospects of New Heroes - Stories of Successful
+                            University Graduates of Successful
+                        </h3>
+                        <!-- /.new-content__title content-title -->
+                        <p class="new-content__subtitle new-content__subtitle-small">
+                            Meeting the Best! Opening Doors to the Future with University
+                            Alumni: Unique Personal Journeys, Professional Highs and
+                            Heroic Stories of Overcoming". Professional Highs and Heroic
+                            Stories of Overcoming...
+                        </p>
+                        <!-- /.new-content__subtitle-->
+                        <a href="#" class="new-content__link new-content__link-small"
+                        >read more <img loading="lazy" src="./images/icons/blue-arrow.svg" alt=""
+                        /></a>
+                        <!-- /.new-content__link -->
+                    </div>
+                    <!-- /.new-content -->
+                </div>
+                <!-- /.new new-2 -->
+                <div class="new new-3 new-small">
+                    <img loading="lazy" class="new-img" src="./images/news/news-3.jpg" loading="lazy" alt=""/>
+                    <!-- /.img-img -->
+                    <div class="new-content new-content-small">
+                        <div class="news-top">
+                            <p class="new-content__date new-content__date-small">
+                                <img class="news-top__icon" loading="lazy" src="./images/icons/date-news.svg" alt="">
+                                26.12.2023
+                            </p>
+                            <p class="new-content__date new-content__date-small">
+                                <img class="news-top__icon" loading="lazy" src="./images/icons/eye.svg" alt="">
+                                123
+                            </p>
+                        </div>
+                        <!-- /.new-content__date -->
+                        <h3 class="new-content__title new-content__title-small">
+                            Successes and Prospects of New Heroes - Stories of Successful
+                            University Graduates
+                        </h3>
+                        <!-- /.new-content__title content-title -->
+                        <p class="new-content__subtitle new-content__subtitle-small">
+                            Meeting the Best! Opening Doors to the Future with University
+                            Alumni: Unique Personal Journeys, Professional Highs and
+                            Heroic Stories of Overcoming". Professional Highs and Heroic
+                            Stories of Overcoming...
+                        </p>
+                        <!-- /.new-content__subtitle-->
+                        <a href="#" class="new-content__link new-content__link-small"
+                        >read more <img loading="lazy" src="./images/icons/blue-arrow.svg" alt=""
+                        /></a>
+                        <!-- /.new-content__link -->
+                    </div>
+                    <!-- /.new-content -->
+                </div>
+                <!-- /.new new-3 -->
+                <div class="new new-4 new-small">
+                    <img loading="lazy" class="new-img" src="./images/news/news-4.jpg" loading="lazy" alt=""/>
+                    <!-- /.img-img -->
+                    <div class="new-content new-content-small">
+                        <div class="news-top">
+                            <p class="new-content__date new-content__date-small">
+                                <img class="news-top__icon" loading="lazy" src="./images/icons/date-news.svg" alt="">
+                                26.12.2023
+                            </p>
+                            <p class="new-content__date new-content__date-small">
+                                <img class="news-top__icon" loading="lazy" src="./images/icons/eye.svg" alt="">
+                                123
+                            </p>
+                        </div>
+                        <!-- /.new-content__date -->
+                        <h3 class="new-content__title new-content__title-small">
+                            Successes and Prospects of New Heroes - Stories of Successful
+                            University Graduates
+                        </h3>
+                        <!-- /.new-content__title content-title -->
+                        <p class="new-content__subtitle new-content__subtitle-small">
+                            Meeting the Best! Opening Doors to the Future with University
+                            Alumni: Unique Personal Journeys, Professional Highs and
+                            Heroic Stories of Overcoming". Professional Highs and Heroic
+                            Stories of Overcoming...
+                        </p>
+                        <!-- /.new-content__subtitle-->
+                        <a href="#" class="new-content__link new-content__link-small"
+                        >read more <img loading="lazy" src="./images/icons/blue-arrow.svg" alt=""
+                        /></a>
+                        <!-- /.new-content__link -->
+                    </div>
+                    <!-- /.new-content -->
+                </div>
+                <!-- /.new new-4 -->
+                <div class="new new-5 new-small">
+                    <img loading="lazy" class="new-img" src="./images/news/news-5.jpg" loading="lazy" alt=""/>
+                    <!-- /.img-img -->
+                    <div class="new-content new-content-small">
+                        <div class="news-top">
+                            <p class="new-content__date new-content__date-small">
+                                <img class="news-top__icon" loading="lazy" src="./images/icons/date-news.svg" alt="">
+                                26.12.2023
+                            </p>
+                            <p class="new-content__date new-content__date-small">
+                                <img class="news-top__icon" loading="lazy" src="./images/icons/eye.svg" alt="">
+                                123
+                            </p>
+                        </div>
+                        <!-- /.new-content__date -->
+                        <h3 class="new-content__title new-content__title-small">
+                            Successes and Prospects of New Heroes - Stories of Successful
+                            University Graduates
+                        </h3>
+                        <!-- /.new-content__title content-title -->
+                        <p class="new-content__subtitle new-content__subtitle-small">
+                            Meeting the Best! Opening Doors to the Future with University
+                            Alumni: Unique Personal Journeys, Professional Highs and
+                            Heroic Stories of Overcoming". Professional Highs and Heroic
+                            Stories of Overcoming...
+                        </p>
+                        <!-- /.new-content__subtitle-->
+                        <a href="#" class="new-content__link new-content__link-small"
+                        >read more <img loading="lazy" src="./images/icons/blue-arrow.svg" alt=""
+                        /></a>
+                        <!-- /.new-content__link -->
+                    </div>
+                    <!-- /.new-content -->
+                </div>
+                <!-- /.new new-5 -->
+            </div>
+            <!-- /.news-grid -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /.news -->
+
+    <section class="about">
+        <div class="container">
+            <div class="title">
+                <h2 class="title__text">
+                    About us <img loading="lazy" src="./images/icons/title-underline.svg" alt=""/>
+                </h2>
+                <a href="#" class="title__link"
+                >see more
+                    <img loading="lazy" src="./images/icons/blue-arrow.svg" alt=""/>
+                </a>
+            </div>
+            <!-- /.title -->
+            <div class="about-content">
+                <div class="about-info">
+                    <h3 class="about-info__title content-title">
+                        Kimyo International University in Tashkent
+                    </h3>
+                    <div class="about-info-bottom">
+                        <p class="about-info__subtitle">
+                            the first private higher education institution in the country,
+                            was initially established under the name of the Yeoju
+                            Technical Institute in Tashkent on the basis of the state
+                            license of the State Inspectorate for Supervision of the
+                            Quality in Education under the Cabinet of Ministers of the
+                            Republic of Uzbekistan No. 0002 (033297) dated 24.07.2018, as
+                            well as the resolution of the Cabinet of Ministers of the
+                            Republic of Uzbekistan No. 1007 dated 17.12.2019.
+                        </p>
+                        <a class="about-info__link" href="#">
+                            <span>see more</span>
+                            <img loading="lazy" src="./images/icons/blue-arrow.svg" alt=""/>
+                        </a>
+                    </div>
+                </div>
+                <!-- /.about-info -->
+                <div class="about-video">
+                    <img
+                            class="about-video__line about-video__line-top"
+                            src="./images/icons/video-line.svg"
+                            alt="video line"
+                    />
+                    <iframe
+                            loading="lazy"
+                            class="about-video__video"
+                            width="100%"
+                            height="360px"
+                            src="https://www.youtube.com/embed/kd4YDWcjOpE"
+                            title="Graduation ceremony held at Kimyo International University in Tashkent"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                    ></iframe>
+                    <img
+                            class="about-video__line about-video__line-bottom"
+                            src="./images/icons/video-line.svg"
+                            alt="video line"
+                    />
+                </div>
+                <!-- /.video -->
+            </div>
+            <!-- /.about-content -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /.about -->
+
+    <section class="benefits">
+        <div class="benefits-inner container">
+            <div class="benefit">
+                <img loading="lazy" src="./images/icons/benefit-1.svg" alt=""/>
+                <h3 class="benefit-title"><span id="benefit_1">0</span> FACULTY MEMBERS</h3>
+                <p class="benefit-subtitle">
+                    embodies a diverse team of educators and scholars committed to
+                    academic excellence and student growth.
+                </p>
+            </div>
+            <div class="benefit">
+                <img loading="lazy" src="./images/icons/benefit-2.svg" alt=""/>
+                <h3 class="benefit-title">
+                    <span id="benefit_2">0</span>MEMORANDA OF UNDERSTANDING
+                </h3>
+                <p class="benefit-subtitle">
+                    the first private higher education institution in the country, was
+                    initially established under the name of the Yeoju Technical
+                    Institute in Tashkent
+                </p>
+            </div>
+            <div class="benefit">
+                <img loading="lazy" src="./images/icons/benefit-3.svg" alt=""/>
+                <h3 class="benefit-title"><span id="benefit_3">0</span> FACULTY MEMBERS</h3>
+                <p class="benefit-subtitle">
+                    embodies a diverse team of educators and scholars committed to
+                    academic excellence and student growth.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- /.benefits -->
+
+    <section class="alumni">
+        <div class="title container">
+            <h2 class="title__text">our <span>alumni</span></h2>
+            <a href="#" class="title__link"
+            >see more
+                <svg
+                        width="6"
+                        height="9"
+                        viewBox="0 0 6 9"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                            d="M1 8.25L4.75 4.5L1 0.75"
+                            stroke="#0096db"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                    />
+                </svg>
+            </a>
+        </div>
+        <!-- /.title -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-1.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Olga Nikolaeva</h2>
+                    <p class="alumni-item__subtitle">
+                        International economic relations
+                    </p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-2.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Anna Vasilyeva</h2>
+                    <p class="alumni-item__subtitle">International marketing</p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-3.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Maria Petrova</h2>
+                    <p class="alumni-item__subtitle">Beauty Aesthetics</p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-4.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Elizabeth Ivanova</h2>
+                    <p class="alumni-item__subtitle">Dentistry</p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-5.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Alexander Mikhailov</h2>
+                    <p class="alumni-item__subtitle">
+                        Information system engineering
+                    </p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-1.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Olga Nikolaeva</h2>
+                    <p class="alumni-item__subtitle">
+                        International economic relations
+                    </p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-2.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Anna Vasilyeva</h2>
+                    <p class="alumni-item__subtitle">International marketing</p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-3.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Maria Petrova</h2>
+                    <p class="alumni-item__subtitle">Beauty Aesthetics</p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-4.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Elizabeth Ivanova</h2>
+                    <p class="alumni-item__subtitle">Dentistry</p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-5.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Alexander Mikhailov</h2>
+                    <p class="alumni-item__subtitle">
+                        Information system engineering
+                    </p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-1.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Olga Nikolaeva</h2>
+                    <p class="alumni-item__subtitle">
+                        International economic relations
+                    </p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-2.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Anna Vasilyeva</h2>
+                    <p class="alumni-item__subtitle">International marketing</p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-3.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Maria Petrova</h2>
+                    <p class="alumni-item__subtitle">Beauty Aesthetics</p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-4.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Elizabeth Ivanova</h2>
+                    <p class="alumni-item__subtitle">Dentistry</p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-5.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Alexander Mikhailov</h2>
+                    <p class="alumni-item__subtitle">
+                        Information system engineering
+                    </p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-6.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Dmitry Sergeev</h2>
+                    <p class="alumni-item__subtitle">
+                        International economic relations
+                    </p>
+                </div>
+                <div
+                        class="alumni-item swiper-slide"
+                        style="
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.5)
+                  ),
+                  url(&quot;./images/alumni/alumni-7.jpg&quot;);
+              "
+                >
+                    <h2 class="alumni-item__title">Dmitry Sergeev</h2>
+                    <p class="alumni-item__subtitle">Business management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.alumni -->
+
+    <section class="partners container">
+        <div class="title">
+            <h2 class="title__text">our <span>Partners</span></h2>
+            <a href="#" class="title__link"
+            >see more
+                <svg
+                        width="6"
+                        height="9"
+                        viewBox="0 0 6 9"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                            d="M1 8.25L4.75 4.5L1 0.75"
+                            stroke="#0096db"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                    />
+                </svg>
+            </a>
+        </div>
+        <!-- /.title -->
+        <!-- partner swiper -->
+        <div class="swiper mySwiperPartners">
+            <div class="partners-list swiper-wrapper">
+                <a class="partners-list__item swiper-slide" href="#"><img loading="lazy" loading="lazy"
+                                                                          src="./images/partners/akfa.png" alt=""></a>
+                <a class="partners-list__item swiper-slide" href="#"><img loading="lazy" loading="lazy"
+                                                                          src="./images/partners/ui.png"
+                                                                          alt=""></a>
+                <a class="partners-list__item swiper-slide" href="#"><img loading="lazy" loading="lazy"
+                                                                          src="./images/partners/vosiq.png" alt=""></a>
+                <a class="partners-list__item swiper-slide" href="#"><img loading="lazy" loading="lazy"
+                                                                          src="./images/partners/uzbekistan.png" alt=""></a>
+                <a class="partners-list__item swiper-slide" href="#"><img loading="lazy" loading="lazy"
+                                                                          src="./images/partners/akfa.png" alt=""></a>
+                <a class="partners-list__item swiper-slide" href="#"><img loading="lazy" loading="lazy"
+                                                                          src="./images/partners/ui.png"
+                                                                          alt=""></a>
+                <a class="partners-list__item swiper-slide" href="#"><img loading="lazy"
+                                                                          src="./images/partners/vosiq.png" alt=""></a>
+                <a class="partners-list__item swiper-slide" href="#"><img loading="lazy"
+                                                                          src="./images/partners/uzbekistan.png" alt=""></a>
+            </div>
+        </div>
+        <!-- /.partner swiper -->
+    </section>
+    <!-- /.partners -->
+
+    <section class="branches">
+        <div class="title container">
+            <h2 class="title__text">our <span>branches</span></h2>
+        </div>
+        <div class="branches-block">
+            <div class="branch">
+                <a href="#" class="branch-block">
+                    <div class="image-container"
+                         style="background-image: url('./images/branches/branches-1.jpg')"></div>
+                    <h1>Tashkent</h1>
+                </a>
+            </div>
+            <div class="branch">
+                <a href="#" class="branch-block">
+                    <div class="image-container"
+                         style="background-image: url('./images/branches/branches-2.jpg')"></div>
+                    <h1>Samarkand</h1>
+                </a>
+            </div>
+            <div class="branch">
+                <a href="#" class="branch-block">
+                    <div class="image-container"
+                         style="background-image: url('./images/branches/branches-3.jpg')"></div>
+                    <h1>Namangan</h1>
+                </a>
+            </div>
+            <div class="branch">
+                <a href="#" class="branch-block">
+                    <div class="image-container"
+                         style="background-image: url('./images/branches/branches-4.jpg')"></div>
+                    <h1>Med</h1>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- /.map -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <img loading="lazy" src="./images/icons/footer-logo.svg" alt=""/>
+                </div>
+                <!-- /.logo -->
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">Timetable</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">Intranet</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">Intranet (part-time study)</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">Library</a>
+                    </li>
+                    <!-- /.footer__item -->
+                </ul>
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">Email</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">Students' Grades</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">Students' Attendance</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer__link">Attendance</a>
+                    </li>
+                    <!-- /.footer__item -->
+                </ul>
+                <ul class="footer-info">
+                    <li>
+                        <a class="footer-info__item" href="https://maps.app.goo.gl/iLwLVBLxN2ktzrzdA" target="_blank">
+                            <img loading="lazy" src="./images/icons/home.svg" alt=""/>
+                            <span>ул. Шота Руставелли, 156, 100121 Ташкент</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer-info__item" href="tel:+998781294040">
+                            <img loading="lazy" src="./images/icons/phone.svg" alt=""/>
+                            <span>+998 78 129 40 40</span>
+                        </a>
+                    </li>
+                    <li class="footer-info__item">
+                        <a class="footer-info__item" href="mailto:info@kiut.uz">
+                            <img loading="lazy" src="./images/icons/email.svg" alt=""/>
+                            <span>info@kiut.uz</span>
+                        </a>
+                    </li>
+                    <!-- /.footer-info__item -->
+                </ul>
+                <!-- /.footer__list -->
+            </div>
+            <!-- /.footer-content -->
+            <div class="footer-bottom">
+                <h4 class="footer-bottom__title">
+                    Разработано <a href="https://t.me/gbehzod">GBehzod</a>, <a href="https://t.me/ShukhratovJ">ShuhkhratovJ</a>
+                </h4>
+                <p class="footer-bottom__copyright">
+                    Copyright © 2024 KIUT. All rights reserved
+                </p>
+                <div class="footer-bottom__social">
+                    <a href="#" class="footer-bottom__social-link">
+                        <img loading="lazy" src="./images/icons/facebook.svg" alt="facebook"/>
+                    </a>
+                    <a href="#" class="footer-bottom__social-link">
+                        <img loading="lazy" src="./images/icons/telegram.svg" alt="twitter"/>
+                    </a>
+                    <a href="#" class="footer-bottom__social-link">
+                        <img loading="lazy" src="./images/icons/linkedin.svg" alt="linkedin"/>
+                    </a>
+                    <a href="#" class="footer-bottom__social-link">
+                        <img loading="lazy" src="./images/icons/youtube.svg" alt="linkedin"/>
+                    </a>
+                    <a href="#" class="footer-bottom__social-link">
+                        <img loading="lazy" src="./images/icons/instagram.svg" alt="instagram"/>
+                    </a>
+                </div>
+            </div>
+            <!-- /.footer-bottom -->
+        </div>
+        <!-- /.container -->
+    </footer>
+    <!-- /.footer -->
+</main>
+<!-- /.main -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+    var alumni = new Swiper(".mySwiper", {
+        centeredSlides: true,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+        },
+        speed: 3000,
+        loop: true,
+        slidesPerView: "auto",
+        allowTouchMove: false,
+    });
+
+    let swiper = new Swiper(".mySwiperPartners", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 9,
+            disableOnInteraction: false,
+        },
+        speed: 4000,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        slidesPerView: "auto",
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+<script src="./js/gsap-main.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
